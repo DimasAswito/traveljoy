@@ -90,29 +90,40 @@
           Tampilan Aplikasi Traveljoy
         </h2>
 
-        <div class="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 px-2 scrollbar-hide">
-          <img src="images/screenshot_1.jpeg" alt="Screenshot 1"
-            class="snap-center rounded-xl shadow-md w-64 flex-shrink-0">
-          <img src="images/screenshot_2.jpeg" alt="Screenshot 2"
-            class="snap-center rounded-xl shadow-md w-64 flex-shrink-0">
-          <img src="images/screenshot_3.jpeg" alt="Screenshot 3"
-            class="snap-center rounded-xl shadow-md w-64 flex-shrink-0">
-          <img src="images/screenshot_4.jpeg" alt="Screenshot 4"
-            class="snap-center rounded-xl shadow-md w-64 flex-shrink-0">
-          <img src="images/screenshot_5.jpeg" alt="Screenshot 5"
-            class="snap-center rounded-xl shadow-md w-64 flex-shrink-0">
-          <img src="images/screenshot_6.jpeg" alt="Screenshot 6"
-            class="snap-center rounded-xl shadow-md w-64 flex-shrink-0">
-          <img src="images/screenshot_7.jpeg" alt="Screenshot 7"
-            class="snap-center rounded-xl shadow-md w-64 flex-shrink-0">
-          <img src="images/screenshot_8.jpeg" alt="Screenshot 8"
-            class="snap-center rounded-xl shadow-md w-64 flex-shrink-0">
-          <img src="images/screenshot_9.jpeg" alt="Screenshot 9"
-            class="snap-center rounded-xl shadow-md w-64 flex-shrink-0">
-          <img src="images/screenshot_10.jpeg" alt="Screenshot 10"
-            class="snap-center rounded-xl shadow-md w-64 flex-shrink-0">
+        <div class="flex items-center justify-center gap-4">
+          <button id="prevBtn"
+            class="bg-white/90 hover:bg-white text-gray-700 rounded-full p-3 shadow-md transition-transform hover:scale-110">
+            <i data-feather="chevron-left"></i>
+          </button>
 
+          <div id="carousel"
+            class="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 px-2 scrollbar-hide max-w-4xl">
+            <img src="images/screenshot_1.jpeg" alt="Screenshot 1"
+              class="snap-center rounded-xl shadow-md w-64 flex-shrink-0">
+            <img src="images/screenshot_2.jpeg" alt="Screenshot 2"
+              class="snap-center rounded-xl shadow-md w-64 flex-shrink-0">
+            <img src="images/screenshot_3.jpeg" alt="Screenshot 3"
+              class="snap-center rounded-xl shadow-md w-64 flex-shrink-0">
+            <img src="images/screenshot_4.jpeg" alt="Screenshot 4"
+              class="snap-center rounded-xl shadow-md w-64 flex-shrink-0">
+            <img src="images/screenshot_5.jpeg" alt="Screenshot 5"
+              class="snap-center rounded-xl shadow-md w-64 flex-shrink-0">
+            <img src="images/screenshot_6.jpeg" alt="Screenshot 6"
+              class="snap-center rounded-xl shadow-md w-64 flex-shrink-0">
+            <img src="images/screenshot_7.jpeg" alt="Screenshot 7"
+              class="snap-center rounded-xl shadow-md w-64 flex-shrink-0">
+            <img src="images/screenshot_8.jpeg" alt="Screenshot 8"
+              class="snap-center rounded-xl shadow-md w-64 flex-shrink-0">
+            <img src="images/screenshot_9.jpeg" alt="Screenshot 9"
+              class="snap-center rounded-xl shadow-md w-64 flex-shrink-0">
+            <img src="images/screenshot_10.jpeg" alt="Screenshot 10"
+              class="snap-center rounded-xl shadow-md w-64 flex-shrink-0">
+          </div>
 
+          <button id="nextBtn"
+            class="bg-white/90 hover:bg-white text-gray-700 rounded-full p-3 shadow-md transition-transform hover:scale-110">
+            <i data-feather="chevron-right"></i>
+          </button>
         </div>
       </section>
 
@@ -132,6 +143,19 @@
   <script src="script.js"></script>
   <script>
     feather.replace();
+
+    const carousel = document.getElementById('carousel');
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+
+    nextBtn.addEventListener('click', () => {
+      carousel.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+
+    prevBtn.addEventListener('click', () => {
+      carousel.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+
   </script>
 </body>
 
